@@ -24,6 +24,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 p { margin: 8px 0; }
 .page { max-width: 840px; margin: 0 auto; padding: 54px 30px 24px; }
+.profile { display: flow-root; }
+.portrait {
+  float: right;
+  width: 180px;
+  height: auto;
+  margin: 0 0 18px 32px;
+}
 .profile h1 {
   margin: 0;
   color: #193d60;
@@ -77,6 +84,7 @@ footer {
 .skip-link:focus { top: 8px; }
 @media (max-width: 600px) {
   .page { padding: 32px 22px 22px; }
+  .portrait { float: none; display: block; width: 150px; margin: 0 0 22px; }
   .profile h1 { font-size: 30px; }
   .navigation { column-gap: 22px; margin-top: 23px; }
   h2 { font-size: 20px; }
