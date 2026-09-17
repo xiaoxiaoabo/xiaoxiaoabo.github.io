@@ -1,0 +1,88 @@
+/* Minimal academic homepage. */
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --text: #263442;
+  --muted: #5e7080;
+  --link: #185b96;
+  --line: #ccddea;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+p { margin: 8px 0; }
+.page { max-width: 840px; margin: 0 auto; padding: 54px 30px 24px; }
+.profile h1 {
+  margin: 0;
+  color: #193d60;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.subtitle { margin: 9px 0 23px; font-size: 14px; color: var(--muted); }
+.bio { margin-bottom: 5px; }
+.muted { color: var(--muted); }
+.profile-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+.profile-links > span { color: #8798a6; }
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 27px 0 30px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+section { margin-bottom: 32px; }
+h2 {
+  margin: 0 0 12px;
+  font-size: 21px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #193d60;
+}
+.publication { margin-top: 19px; }
+h3 { margin: 0 0 3px; font-size: 16px; font-weight: 600; }
+.publication p { margin: 3px 0; }
+.publication-meta { color: var(--muted); font-size: 14px; }
+.publication-links { font-size: 14px; }
+.contact-list { margin: 0; }
+.contact-list > div { display: flex; gap: 14px; margin: 4px 0; }
+dt { width: 60px; flex-shrink: 0; }
+dd { margin: 0; overflow-wrap: anywhere; }
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 36px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+.skip-link { position: absolute; left: 16px; top: -80px; padding: 8px 14px; background: var(--background); }
+.skip-link:focus { top: 8px; }
+@media (max-width: 600px) {
+  .page { padding: 32px 22px 22px; }
+  .profile h1 { font-size: 30px; }
+  .navigation { column-gap: 22px; margin-top: 23px; }
+  h2 { font-size: 20px; }
+  section { margin-bottom: 28px; }
+}
+@media (max-width: 360px) {
+  .page { padding-inline: 18px; }
+  .navigation { column-gap: 16px; font-size: 13px; }
+}
