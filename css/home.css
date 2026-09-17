@@ -24,31 +24,36 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 p { margin: 8px 0; }
 .page { max-width: 840px; margin: 0 auto; padding: 54px 30px 24px; }
-.profile-heading {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 22px;
-}
-.profile-identity { min-width: 0; }
-.portrait {
-  display: block;
-  flex-shrink: 0;
-  width: 96px;
-  height: auto;
-}
 .profile h1 {
-  margin: 0;
+  margin: 0 0 36px;
+  text-align: center;
   color: #193d60;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 500;
   line-height: 1.3;
 }
-.subtitle { margin: 9px 0 0; font-size: 14px; color: var(--muted); }
-.bio { margin-bottom: 5px; }
-.muted { color: var(--muted); }
-.profile-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+.profile-columns {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+.portrait {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center 55%;
+  border-radius: 12px;
+}
+.profile-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .profile-links > span { color: #8798a6; }
+.profile-copy p { margin: 0 0 16px; }
+.subtitle { font-size: 14px; color: var(--muted); }
+.muted { color: var(--muted); }
+.profile-copy section { margin: 22px 0 18px; }
+.profile-copy h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.email { overflow-wrap: anywhere; }
 .navigation {
   display: flex;
   flex-wrap: wrap;
@@ -90,8 +95,8 @@ footer {
 .skip-link:focus { top: 8px; }
 @media (max-width: 600px) {
   .page { padding: 32px 22px 22px; }
-  .profile-heading { gap: 18px; }
-  .portrait { width: 72px; }
+  .profile-columns { grid-template-columns: 120px minmax(0, 1fr); gap: 20px; }
+  .portrait { height: 145px; border-radius: 8px; }
   .profile h1 { font-size: 28px; }
   .navigation { column-gap: 22px; margin-top: 23px; }
   h2 { font-size: 20px; }
@@ -100,4 +105,11 @@ footer {
 @media (max-width: 360px) {
   .page { padding-inline: 18px; }
   .navigation { column-gap: 16px; font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .profile-columns { grid-template-columns: 1fr; gap: 24px; }
+  .profile-sidebar { width: 150px; margin-inline: auto; }
+  .portrait { height: 170px; }
+  .profile h1 { margin-bottom: 24px; }
 }
