@@ -24,12 +24,18 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 p { margin: 8px 0; }
 .page { max-width: 840px; margin: 0 auto; padding: 54px 30px 24px; }
-.profile { display: flow-root; }
+.profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+.profile-identity { min-width: 0; }
 .portrait {
-  float: right;
-  width: 180px;
+  display: block;
+  flex-shrink: 0;
+  width: 96px;
   height: auto;
-  margin: 0 0 18px 32px;
 }
 .profile h1 {
   margin: 0;
@@ -38,7 +44,7 @@ p { margin: 8px 0; }
   font-weight: 500;
   line-height: 1.3;
 }
-.subtitle { margin: 9px 0 23px; font-size: 14px; color: var(--muted); }
+.subtitle { margin: 9px 0 0; font-size: 14px; color: var(--muted); }
 .bio { margin-bottom: 5px; }
 .muted { color: var(--muted); }
 .profile-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
@@ -84,8 +90,9 @@ footer {
 .skip-link:focus { top: 8px; }
 @media (max-width: 600px) {
   .page { padding: 32px 22px 22px; }
-  .portrait { float: none; display: block; width: 150px; margin: 0 0 22px; }
-  .profile h1 { font-size: 30px; }
+  .profile-heading { gap: 18px; }
+  .portrait { width: 72px; }
+  .profile h1 { font-size: 28px; }
   .navigation { column-gap: 22px; margin-top: 23px; }
   h2 { font-size: 20px; }
   section { margin-bottom: 28px; }
